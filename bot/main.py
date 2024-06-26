@@ -9,23 +9,6 @@ from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 from aiogram.fsm.storage.memory import MemoryStorage
 from middlewares.throttling import DbSessionMiddleware
 
-
-# config = load_config()
-# dp = Dispatcher()
-# bot = Bot(token=config.tg_bot.bot_token)
-#
-# @dp.message(StateFilter(None), Command('start'))
-# async def cmd_start(message: types.Message):
-#     await message.answer("Привет! Я бот, собирающий фидбек касательно встречи с менторами!")
-#     await message.answer("Чтобы дать фидбек тебе всего лишь нужно ввести команду /poll, а если хочешь выйти из опроса, "
-#                          "то нужно ввести команду /stop")
-#
-#
-# @dp.message(Command('help'))
-# async def cmd_help(message: types.Message):
-#     await message.answer("Чтобы дать фидбек тебе всего лишь нужно ввести команду /poll, а если хочешь выйти из опроса, "
-#                          "то нужно ввести команду /stop")
-
 async def main():
     config: Config = load_config()
 
