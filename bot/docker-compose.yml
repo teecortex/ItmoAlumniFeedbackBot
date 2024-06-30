@@ -1,0 +1,21 @@
+version: '3.3'
+
+services:
+  mf_database:
+    image: postgres
+    container_name: mf-database
+    ports:
+      - "5438:5432"
+    environment:
+      POSTGRES_PASSWORD: sweetpie
+      POSTGRES_DB: mentor_feedback_db
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - /var/lib/postgresql/data:/var/lib/postgresql/data
+    restart: always
+  mf_bot:
+    image: mf_bot-image
+    container_name: mf-bot
+    env_file:
+      - .env
+    restart: always
